@@ -25,13 +25,16 @@ function updateCasePrice(caseNumber) {
     const totalAmount = caseNumber * 59;
     const casePrice = document.getElementById('case-price')
     casePrice.innerText = totalAmount
+
 }
+
 
 document.getElementById("case-btn-plus").addEventListener('click', function () {
     const caseNumber = updateCaseNumber(true);
     if (!isNaN(caseNumber)) {
         updateCasePrice(caseNumber)
     }
+    calculateSubTotal()
 
 })
 document.getElementById("case-btn-minus").addEventListener('click', function () {
@@ -40,5 +43,6 @@ document.getElementById("case-btn-minus").addEventListener('click', function () 
     if (!isNaN(caseNumber)) {
         updateCasePrice(caseNumber)
     }
+    calculateSubTotal()
 
 })

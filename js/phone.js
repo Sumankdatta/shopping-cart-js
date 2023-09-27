@@ -32,6 +32,7 @@ document.getElementById('phone-btn-plus').addEventListener('click', function () 
     const phoneNumber = updatePhoneNumber(true)
     console.log(phoneNumber);
     updatePrice(phoneNumber)
+    calculateSubTotal()
 
 })
 document.getElementById('phone-btn-minus').addEventListener('click', function () {
@@ -39,6 +40,7 @@ document.getElementById('phone-btn-minus').addEventListener('click', function ()
     if (!isNaN(phoneNumber)) {
         updatePrice(phoneNumber)
     }
+    calculateSubTotal()
 
 
 })
