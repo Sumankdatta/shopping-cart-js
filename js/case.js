@@ -11,13 +11,12 @@ function updateCaseNumber(isIncrease) {
     else {
         newCaseNumber = caseNumber - 1;
     }
-    if (newCaseNumber < 1) {
+    if (newCaseNumber < 0) {
         alert('Can not negative')
-    }
-    else {
-        caseNumberField.value = newCaseNumber;
+        return
     }
 
+    caseNumberField.value = newCaseNumber;
     return newCaseNumber;
 
 }
@@ -30,10 +29,16 @@ function updateCasePrice(caseNumber) {
 
 document.getElementById("case-btn-plus").addEventListener('click', function () {
     const caseNumber = updateCaseNumber(true);
-    updateCasePrice(caseNumber)
+    if (!isNaN(caseNumber)) {
+        updateCasePrice(caseNumber)
+    }
 
 })
 document.getElementById("case-btn-minus").addEventListener('click', function () {
     const caseNumber = updateCaseNumber(false)
-    updateCasePrice(caseNumber)
+
+    if (!isNaN(caseNumber)) {
+        updateCasePrice(caseNumber)
+    }
+
 })
